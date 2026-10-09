@@ -283,6 +283,11 @@
   .pack input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
   .pack input:checked+span{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--gold)}
 
+  .pdf-link{display:inline-flex;align-items:center;gap:12px;margin:14px 0 22px;padding:12px 18px;background:var(--card);border:1px solid var(--line);border-radius:6px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow)}
+  .pdf-link:hover{border-color:var(--gold)}
+  .pdf-link .ic{width:36px;height:36px;border-radius:4px;background:var(--tulip);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:13px;letter-spacing:.05em;flex:none}
+  .pdf-link b{display:block;font-size:15px;font-weight:700;color:var(--delft)}
+  .pdf-link small{font-size:12px;color:var(--ink-soft)}
   footer{padding:40px 0 60px;border-top:3px double var(--gold-soft);margin-top:40px;font-size:13px;color:var(--ink-soft)}
   footer .brand{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--delft);font-size:18px;margin-bottom:6px}
   footer ul{padding-left:18px;margin:8px 0 0}
@@ -765,6 +770,7 @@
 <footer>
   <div class="wrap">
     <div class="brand">佳騰旅行社　07-342-5656</div>
+    <a class="pdf-link" href="itinerary.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>旅行社原始行程表（PDF）</b><small>22 頁，約 10 MB。手機點開可直接閱讀，長按可另存。</small></span></a>
     <p>本頁依旅行社 2027/04/06 出發行程表整理。航班、飯店、餐食以旅行社最終行前說明會資料為準；補充資訊查詢日期為 2026 年 10 月，出發前請再確認。</p>
     <p style="margin-bottom:4px"><b>補充資訊來源</b></p>
     <ul>
