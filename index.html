@@ -248,6 +248,22 @@
   td .date{font-size:13px;color:var(--ink-soft)}
   .note{font-size:13px;color:var(--ink-soft);margin-top:10px}
 
+  /* ---------- DAY JUMP ---------- */
+  .dayjump{position:sticky;top:50px;z-index:15;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 0 12px;margin:-10px 0 14px;
+    background:var(--nav-bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .dayjump::-webkit-scrollbar{display:none}
+  .dayjump a{flex:none;display:flex;flex-direction:column;align-items:center;min-width:52px;padding:5px 8px 4px;border-radius:6px;text-decoration:none;
+    border:1px solid var(--line);background:var(--card);color:var(--ink-soft);line-height:1.15;transition:.15s}
+  .dayjump a b{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:17px;letter-spacing:.05em;color:var(--delft)}
+  .dayjump a small{font-size:10.5px;letter-spacing:.02em}
+  .dayjump a:hover{border-color:var(--gold)}
+  .dayjump a.on{background:var(--thead-bg);border-color:var(--thead-bg);color:#fff}
+  .dayjump a.on b{color:var(--hero-gold)}
+  .dayjump a.nl{border-top:3px solid var(--nl)} .dayjump a.be{border-top:3px solid var(--be)} .dayjump a.fr{border-top:3px solid var(--fr)} .dayjump a.fly{border-top:3px solid #6d7684}
+  .day{scroll-margin-top:118px}
+  @media (max-width:720px){.dayjump{top:46px}.day{scroll-margin-top:112px}}
+  @media print{.dayjump{display:none}}
+
   /* ---------- DAYS ---------- */
   .day{
     display:grid;grid-template-columns:150px 1fr;gap:0;
@@ -607,9 +623,21 @@
       <h2>每日行程</h2><span class="latin">Day by Day</span>
       <p>車程為 Google 地圖一般路況的估算，實際依交通與停留時間增減。</p>
     </div>
+    <nav class="dayjump" aria-label="跳到某一天">
+      <a href="#day-1" class="fly"><b>01</b><small>4/6</small></a>
+      <a href="#day-2" class="nl"><b>02</b><small>4/7</small></a>
+      <a href="#day-3" class="nl"><b>03</b><small>4/8</small></a>
+      <a href="#day-4" class="nl"><b>04</b><small>4/9</small></a>
+      <a href="#day-5" class="be"><b>05</b><small>4/10</small></a>
+      <a href="#day-6" class="fr"><b>06</b><small>4/11</small></a>
+      <a href="#day-7" class="fr"><b>07</b><small>4/12</small></a>
+      <a href="#day-8" class="fr"><b>08</b><small>4/13</small></a>
+      <a href="#day-9" class="fly"><b>09</b><small>4/14</small></a>
+      <a href="#day-10" class="fly"><b>10</b><small>4/15</small></a>
+    </nav>
 
     <!-- DAY 1 -->
-    <article class="day fly">
+    <article id="day-1" class="day fly">
       <div class="side"><div><div class="d">Day</div><div class="n">01</div></div><div><div class="date">4 月 6 日</div><div class="wd">星期二</div></div><div class="country">TAIWAN → HK</div></div>
       <div class="body">
         <h3>高雄 ✈ 香港 ✈ 阿姆斯特丹</h3>
@@ -623,7 +651,7 @@
     </article>
 
     <!-- DAY 2 -->
-    <article class="day nl">
+    <article id="day-2" class="day nl">
       <div class="side"><div><div class="d">Day</div><div class="n">02</div></div><div><div class="date">4 月 7 日</div><div class="wd">星期三</div></div><div class="country">NETHERLANDS</div></div>
       <div class="body">
         <div class="photo" style="background-image:url(img/volendam.jpg)" data-cap="沃倫丹 Volendam · 北海漁村"></div>
@@ -646,7 +674,7 @@
     </article>
 
     <!-- DAY 3 -->
-    <article class="day nl">
+    <article id="day-3" class="day nl">
       <div class="side"><div><div class="d">Day</div><div class="n">03</div></div><div><div class="date">4 月 8 日</div><div class="wd">星期四</div></div><div class="country">NETHERLANDS</div></div>
       <div class="body">
         <div class="photo" style="background-image:url(img/giethoorn.jpg)" data-cap="羊角村 Giethoorn · 水上童話小鎮"></div>
@@ -667,7 +695,7 @@
     </article>
 
     <!-- DAY 4 -->
-    <article class="day nl">
+    <article id="day-4" class="day nl">
       <div class="side"><div><div class="d">Day</div><div class="n">04</div></div><div><div class="date">4 月 9 日</div><div class="wd">星期五</div></div><div class="country">NETHERLANDS</div></div>
       <div class="body">
         <div class="photo" style="background-image:url(img/rotterdam.jpg)" data-cap="鹿特丹 Rotterdam · 伊拉斯謨橋"></div>
@@ -688,7 +716,7 @@
     </article>
 
     <!-- DAY 5 -->
-    <article class="day be">
+    <article id="day-5" class="day be">
       <div class="side"><div><div class="d">Day</div><div class="n">05</div></div><div><div class="date">4 月 10 日</div><div class="wd">星期六</div></div><div class="country">BELGIUM</div></div>
       <div class="body">
         <div class="photo split"><div style="background-image:url(img/brugge.jpg)" data-cap="布魯日 Brugge · 愛之湖運河"></div><div style="background-image:url(img/brussels.jpg)" data-cap="布魯塞爾 Brussel · 藝術之丘"></div></div>
@@ -708,7 +736,7 @@
     </article>
 
     <!-- DAY 6 -->
-    <article class="day fr">
+    <article id="day-6" class="day fr">
       <div class="side"><div><div class="d">Day</div><div class="n">06</div></div><div><div class="date">4 月 11 日</div><div class="wd">星期日</div></div><div class="country">FRANCE</div></div>
       <div class="body">
         <div class="photo" style="background-image:url(img/eiffel.jpg)" data-cap="巴黎 Paris · 塞納河與艾菲爾鐵塔"></div>
@@ -731,7 +759,7 @@
     </article>
 
     <!-- DAY 7 -->
-    <article class="day fr">
+    <article id="day-7" class="day fr">
       <div class="side"><div><div class="d">Day</div><div class="n">07</div></div><div><div class="date">4 月 12 日</div><div class="wd">星期一</div></div><div class="country">FRANCE</div></div>
       <div class="body">
         <div class="photo" style="background-image:url(img/versailles.jpg)" data-cap="凡爾賽宮 Château de Versailles · 金色大門"></div>
@@ -753,7 +781,7 @@
     </article>
 
     <!-- DAY 8 -->
-    <article class="day fr">
+    <article id="day-8" class="day fr">
       <div class="side"><div><div class="d">Day</div><div class="n">08</div></div><div><div class="date">4 月 13 日</div><div class="wd">星期二</div></div><div class="country">FRANCE</div></div>
       <div class="body">
         <div class="photo" style="background-image:url(img/louvre.jpg)" data-cap="羅浮宮 Musée du Louvre · 玻璃金字塔"></div>
@@ -775,7 +803,7 @@
     </article>
 
     <!-- DAY 9 -->
-    <article class="day fly">
+    <article id="day-9" class="day fly">
       <div class="side"><div><div class="d">Day</div><div class="n">09</div></div><div><div class="date">4 月 14 日</div><div class="wd">星期三</div></div><div class="country">FRANCE → HK</div></div>
       <div class="body">
         <h3>巴黎 ✈ 香港</h3>
@@ -790,7 +818,7 @@
     </article>
 
     <!-- DAY 10 -->
-    <article class="day fly">
+    <article id="day-10" class="day fly">
       <div class="side"><div><div class="d">Day</div><div class="n">10</div></div><div><div class="date">4 月 15 日</div><div class="wd">星期四</div></div><div class="country">HK → TAIWAN</div></div>
       <div class="body">
         <h3>香港 ✈ 高雄</h3>
@@ -904,6 +932,23 @@
   });
   if(mq && mq.addEventListener){ mq.addEventListener('change',label); }
   label();
+})();
+(function(){
+  var links=Array.prototype.slice.call(document.querySelectorAll('.dayjump a'));
+  var days=Array.prototype.slice.call(document.querySelectorAll('article.day'));
+  if(!links.length||!('IntersectionObserver' in window)) return;
+  var current=null;
+  function setOn(id){
+    if(id===current) return; current=id;
+    links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href')==='#'+id); });
+    var on=document.querySelector('.dayjump a.on');
+    if(on && on.scrollIntoView){ on.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'}); }
+  }
+  var io=new IntersectionObserver(function(entries){
+    var vis=entries.filter(function(e){return e.isIntersecting;}).sort(function(a,b){return b.intersectionRatio-a.intersectionRatio;});
+    if(vis.length) setOn(vis[0].target.id);
+  },{rootMargin:'-120px 0px -55% 0px',threshold:[0,.25,.5,.75,1]});
+  days.forEach(function(d){ io.observe(d); });
 })();
 </script>
 
