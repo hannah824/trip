@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>荷比法浪漫風情藝術古城 10 日｜2027.04.06 出發</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f0e4;
+    --paper-2:#ede4d2;
+    --ink:#1e2a35;
+    --ink-soft:#4e5a66;
+    --line:#d9cdb6;
+    --delft:#1e4a78;
+    --delft-deep:#122f4e;
+    --tulip:#d6472c;
+    --tulip-soft:#f6d9cf;
+    --gold:#c49a3c;
+    --moss:#5a7352;
+    --nl:#ef7d1a;
+    --be:#f3c623;
+    --fr:#2a5fb7;
+    --shadow:0 18px 40px -24px rgba(30,42,53,.45);
+  }
+  *{box-sizing:border-box;min-width:0}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Noto Sans TC",sans-serif;
+    font-size:16px;
+    line-height:1.75;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(214,71,44,.06), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(30,74,120,.08), transparent 45%);
+  }
+  h1,h2,h3,h4{font-family:"Noto Serif TC",serif;margin:0;line-height:1.3}
+  .latin{font-family:"Cormorant Garamond",serif;letter-spacing:.08em}
+  a{color:var(--delft)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;
+    color:#fff;
+    background:linear-gradient(135deg,var(--delft-deep) 0%,var(--delft) 55%,#2f6ea8 100%);
+    overflow:hidden;
+    padding:72px 0 64px;
+  }
+  header.hero::before{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.035) 46px 48px);
+    pointer-events:none;
+  }
+  header.hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle,rgba(214,71,44,.55),rgba(214,71,44,0) 65%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:12px;
+    font-family:"Cormorant Garamond",serif;font-size:15px;letter-spacing:.3em;text-transform:uppercase;
+    color:rgba(255,255,255,.75);margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:40px;height:1px;background:var(--gold);flex:none}
+  @media (max-width:720px){.eyebrow{font-size:12px;letter-spacing:.2em}.eyebrow::before{width:24px}}
+  .hero h1{font-size:clamp(34px,6vw,64px);font-weight:900;letter-spacing:.04em;text-shadow:0 2px 0 rgba(0,0,0,.15)}
+  .hero h1 small{display:block;font-size:.42em;font-weight:500;letter-spacing:.2em;color:#f1d7a4;margin-top:8px}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:28px;font-size:15px;color:rgba(255,255,255,.9)}
+  .hero-meta b{color:#f1d7a4;font-weight:500;margin-right:6px;font-family:"Cormorant Garamond",serif;letter-spacing:.15em;font-size:13px}
+  .flags{display:flex;gap:10px;margin-top:34px;flex-wrap:wrap}
+  .flag{
+    display:flex;align-items:center;gap:10px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+    padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;backdrop-filter:blur(4px);
+  }
+  .flag i{display:inline-block;width:26px;height:18px;border-radius:3px;overflow:hidden;position:relative}
+  .flag.nl i{background:linear-gradient(#ae1c28 0 33%,#fff 33% 66%,#21468b 66%)}
+  .flag.be i{background:linear-gradient(90deg,#000 0 33%,#fae042 33% 66%,#ed2939 66%)}
+  .flag.fr i{background:linear-gradient(90deg,#0055a4 0 33%,#fff 33% 66%,#ef4135 66%)}
+  .highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:38px}
+  .hl{
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:16px 18px;
+  }
+  @media (prefers-reduced-motion:no-preference){.hl{animation:rise .8s ease both}.hl:nth-child(2){animation-delay:.12s}.hl:nth-child(3){animation-delay:.24s}}
+  .hl .k{font-size:12px;letter-spacing:.25em;color:#f1d7a4;font-family:"Cormorant Garamond",serif;text-transform:uppercase}
+  .hl .v{font-family:"Noto Serif TC",serif;font-size:19px;font-weight:700;margin-top:4px}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  /* ---------- NAV ---------- */
+  nav.toc{
+    position:sticky;top:0;z-index:20;
+    background:rgba(246,240,228,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px;scrollbar-width:none}
+  nav.toc a{
+    white-space:nowrap;text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:500;
+    padding:6px 14px;border-radius:999px;transition:.2s;
+  }
+  nav.toc a:hover{background:var(--tulip-soft);color:var(--tulip)}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:64px 0 24px}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:28px;flex-wrap:wrap}
+  .sec-head h2{font-size:30px;font-weight:900;position:relative;padding-left:18px}
+  .sec-head h2::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:5px;background:var(--tulip);border-radius:3px}
+  .sec-head .latin{color:var(--gold);font-size:16px;text-transform:uppercase}
+  .sec-head p{margin:0;color:var(--ink-soft);font-size:14px;flex-basis:100%}
+
+  /* ---------- INFO CARDS ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;
+    box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .card::after{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--tulip),var(--gold))}
+  .card h3{font-size:17px;display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .card h3 .ico{font-size:22px;line-height:1}
+  .card .big{font-family:"Noto Serif TC",serif;font-size:30px;font-weight:900;color:var(--delft);line-height:1.1;margin:4px 0 8px}
+  .card .big small{font-size:14px;color:var(--ink-soft);font-weight:500;margin-left:6px;font-family:"Noto Sans TC",sans-serif}
+  .card p{margin:0;font-size:14px;color:var(--ink-soft)}
+  .card ul{margin:6px 0 0;padding-left:18px;font-size:14px;color:var(--ink-soft)}
+  .card li{margin:2px 0}
+
+  /* weather */
+  .wx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+  .wx div{background:var(--paper);border-radius:10px;padding:10px 4px;text-align:center}
+  .wx .c{font-size:11px;color:var(--ink-soft);white-space:nowrap}
+  .wx .t{font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px;color:var(--delft);white-space:nowrap}
+  .wx .t span{color:var(--tulip)}
+
+  /* clock */
+  .clocks{display:flex;gap:10px;margin-top:8px}
+  .clocks div{flex:1;background:var(--paper);border-radius:10px;padding:10px;text-align:center}
+  .clocks .z{font-size:12px;color:var(--ink-soft)}
+  .clocks .t{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600;color:var(--delft);line-height:1.1}
+
+  /* ---------- ALERT ---------- */
+  .alert{
+    background:#fff8f0;border:1px solid #f0c9a4;border-left:6px solid var(--tulip);
+    border-radius:14px;padding:22px 24px;margin-bottom:18px;
+  }
+  .alert h3{font-size:18px;color:var(--tulip);margin-bottom:8px;display:flex;gap:10px;align-items:center}
+  .alert p{margin:0 0 8px;font-size:15px}
+  .alert p:last-child{margin-bottom:0}
+  .alert.info{background:#f2f6fb;border-color:#bcd0e8;border-left-color:var(--delft)}
+  .alert.info h3{color:var(--delft)}
+  .tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;background:var(--tulip-soft);color:var(--tulip);font-weight:700;margin-left:6px;vertical-align:middle}
+  .tag.blue{background:#dce7f5;color:var(--delft)}
+
+  /* ---------- FLIGHTS ---------- */
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);font-size:15px}
+  thead th{background:var(--delft);color:#fff;font-weight:500;text-align:left;padding:12px 16px;font-size:13px;letter-spacing:.1em}
+  tbody td{padding:14px 16px;border-top:1px solid var(--line);vertical-align:middle}
+  tbody tr:nth-child(even) td{background:#fbf8f2}
+  td .code{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:20px;color:var(--delft);letter-spacing:.05em}
+  td .time{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600}
+  td .time sup{font-size:11px;color:var(--tulip);font-family:"Noto Sans TC",sans-serif;font-weight:700}
+  td .route{font-weight:700}
+  td .date{font-size:13px;color:var(--ink-soft)}
+  .note{font-size:13px;color:var(--ink-soft);margin-top:10px}
+
+  /* ---------- DAYS ---------- */
+  .day{
+    display:grid;grid-template-columns:150px 1fr;gap:0;
+    background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    margin-bottom:22px;box-shadow:var(--shadow);
+  }
+  .day .side{
+    padding:24px 18px;color:#fff;position:relative;
+    display:flex;flex-direction:column;justify-content:flex-start;gap:4px;
+  }
+  .day.nl .side{background:linear-gradient(160deg,#f28c28,#d9641c)}
+  .day.be .side{background:linear-gradient(160deg,#5a5a5a,#232323)}
+  .day.fr .side{background:linear-gradient(160deg,#3a73c9,var(--delft))}
+  .day.fly .side{background:linear-gradient(160deg,#6c7a89,#3f4a56)}
+  .day .side .d{font-family:"Cormorant Garamond",serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+  .day .side .n{font-family:"Noto Serif TC",serif;font-size:46px;font-weight:900;line-height:1}
+  .day .side .date{font-size:14px;margin-top:6px;opacity:.95}
+  .day .side .wd{font-size:13px;opacity:.8}
+  .day .side .country{margin-top:auto;font-size:12px;letter-spacing:.15em;opacity:.8;padding-top:14px}
+  .day .body{padding:24px 26px 22px}
+  .day h3{font-size:22px;font-weight:700;margin-bottom:6px}
+  .day .route{font-size:14px;color:var(--ink-soft);margin-bottom:14px}
+  .day .route b{color:var(--tulip);font-weight:500}
+  .day .intro{font-size:15px;color:var(--ink-soft);margin:0 0 14px}
+  .spots{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:16px}
+  .spot{background:var(--paper);border-radius:12px;padding:12px 14px}
+  .spot h4{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .spot h4 .en{font-family:"Cormorant Garamond",serif;font-size:14px;color:var(--gold);font-weight:600;letter-spacing:.05em}
+  .spot p{margin:4px 0 0;font-size:13.5px;color:var(--ink-soft);line-height:1.65}
+  .star{display:inline-block;font-size:11px;padding:1px 8px;border-radius:999px;background:var(--tulip);color:#fff;font-weight:700}
+  .visit{display:inline-block;font-size:11px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink-soft)}
+  .visit.in{border-color:var(--moss);color:var(--moss)}
+  .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px dashed var(--line);padding-top:14px}
+  .meta .k{font-size:12px;letter-spacing:.15em;color:var(--gold);font-family:"Cormorant Garamond",serif;text-transform:uppercase;font-weight:600}
+  .meta .v{font-size:14px;margin-top:2px}
+  .meals{display:flex;flex-direction:column;gap:2px}
+  .meals span{display:flex;gap:8px}
+  .meals em{font-style:normal;color:var(--ink-soft);min-width:28px;font-size:12px;padding-top:2px}
+  .meals .self{color:var(--tulip)}
+  .tip{margin-top:12px;background:#fff8f0;border-left:3px solid var(--gold);padding:8px 12px;font-size:13.5px;border-radius:0 8px 8px 0}
+  .tip.warn{background:#fdf0ec;border-left-color:var(--tulip)}
+  .tip b{color:var(--tulip)}
+
+  /* ---------- PRICE ---------- */
+  .price{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .price .card .big{color:var(--tulip)}
+  .inc{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .inc span{background:var(--paper);border:1px solid var(--line);padding:4px 12px;border-radius:999px;font-size:13px}
+
+  /* ---------- PACK ---------- */
+  .pack{columns:2;column-gap:28px;font-size:15px}
+  .pack div{break-inside:avoid;margin-bottom:16px}
+  .pack h4{font-size:15px;color:var(--delft);margin-bottom:6px}
+  .pack ul{margin:0;padding-left:20px;color:var(--ink-soft);font-size:14px}
+  .pack li{margin:3px 0}
+
+  footer{padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px;font-size:13px;color:var(--ink-soft)}
+  footer .brand{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--delft);font-size:18px;margin-bottom:6px}
+  footer ul{padding-left:18px;margin:8px 0 0}
+  footer li{margin:2px 0}
+
+  @media (max-width:720px){
+    .day{grid-template-columns:1fr}
+    .day .side{flex-direction:row;align-items:center;gap:14px;padding:16px 18px}
+    .day .side .n{font-size:34px}
+    .day .side .country{margin-top:0;margin-left:auto;padding-top:0}
+    .meta{grid-template-columns:1fr}
+    .pack{columns:1}
+    .wx{grid-template-columns:repeat(3,1fr)}
+    section{padding:44px 0 16px}
+    thead{display:none}
+    tbody td{display:block;border-top:none;padding:4px 16px}
+    tbody tr td:first-child{padding-top:14px}
+    tbody tr td:last-child{padding-bottom:14px;border-bottom:1px solid var(--line)}
+  }
+  @media print{
+    nav.toc{display:none}
+    .hl{animation:none;opacity:1}
+    body{background:#fff}
+    .day,.card,table{box-shadow:none;break-inside:avoid}
+    header.hero{padding:36px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Netherlands · Belgium · France</div>
+    <h1>荷比法浪漫風情<br>藝術古城 10 日
+      <small>鬱金香花季限定｜法國雙宮・庫肯霍夫花園・塞納河法式午宴</small>
+    </h1>
+    <div class="hero-meta">
+      <div><b>DEPART</b>2027 年 4 月 6 日（二）</div>
+      <div><b>RETURN</b>2027 年 4 月 15 日（四）</div>
+      <div><b>AIRLINE</b>國泰航空 高雄出發</div>
+      <div><b>AGENCY</b>佳騰旅行社 07-342-5656</div>
+    </div>
+    <div class="flags">
+      <span class="flag nl"><i></i>荷蘭 3 晚</span>
+      <span class="flag be"><i></i>比利時 1 晚</span>
+      <span class="flag fr"><i></i>法國 3 晚</span>
+      <span class="flag" style="opacity:.8">✈ 機上 2 晚</span>
+    </div>
+    <div class="highlights">
+      <div class="hl"><div class="k">Special 01</div><div class="v">凡爾賽宮＋羅浮宮 法國雙宮入內</div></div>
+      <div class="hl"><div class="k">Special 02</div><div class="v">庫肯霍夫花園 百萬鬱金香盛放</div></div>
+      <div class="hl"><div class="k">Special 03</div><div class="v">塞納河遊船 船上法式午宴</div></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#info">實用資訊</a>
+    <a href="#alerts">行前提醒</a>
+    <a href="#flights">航班</a>
+    <a href="#days">每日行程</a>
+    <a href="#price">費用</a>
+    <a href="#pack">打包清單</a>
+  </div>
+</nav>
+
+<!-- ================= INFO ================= -->
+<section id="info">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>實用資訊</h2><span class="latin">Essentials</span>
+      <p>時差、天氣、貨幣等資訊整理自網路公開資料（2026 年 10 月查詢），出發前請再確認一次。</p>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <h3><span class="ico">🕰️</span>時差</h3>
+        <div class="big">慢 6 小時</div>
+        <p>4 月已進入歐洲夏令時間（2027/3/28 起），荷比法三國同為 CEST（UTC+2），台灣是 UTC+8。香港與台灣無時差。</p>
+        <div class="clocks">
+          <div><div class="z">台灣</div><div class="t">18:00</div></div>
+          <div><div class="z">荷比法</div><div class="t">12:00</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><span class="ico">🌤️</span>4 月天氣</h3>
+        <div class="wx">
+          <div><div class="c">阿姆斯特丹</div><div class="t">5<span>~</span>13°</div></div>
+          <div><div class="c">布魯塞爾</div><div class="t">5<span>~</span>13°</div></div>
+          <div><div class="c">巴黎</div><div class="t">8<span>~</span>17°</div></div>
+        </div>
+        <p style="margin-top:10px">春季天氣多變，陣雨頻繁（巴黎 4 月平均約 12 個雨天），早晚涼、中午有陽光時舒適。日落約 20:30，白天很長。</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="ico">💶</span>貨幣</h3>
+        <div class="big">歐元 €<small>≈ NT$ 36–37</small></div>
+        <p>荷比法三國皆用歐元。匯率為 2026 年 10 月參考值，出發前請再查。歐洲信用卡與感應支付非常普及，現金只需準備小額（小費、市集、公廁 €0.5–1）。</p>
+        <ul>
+          <li>第 4 天鹿特丹晚餐自理（旅行社發 €20／人）</li>
+          <li>第 8 天巴黎午餐自理（逛街）</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><span class="ico">🔌</span>電壓與插座</h3>
+        <div class="big">230V<small>C／E／F 型圓孔</small></div>
+        <p>台灣電器需轉接頭（團費已含贈送轉接頭）。手機、相機充電器多為 100–240V 通用，不需變壓器；吹風機等高功率電器請確認支援 230V。</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="ico">📶</span>網路</h3>
+        <div class="big">歐洲網卡<small>團費已含</small></div>
+        <p>旅行社每人贈送一張歐洲網卡（歐洲 43 國通用）。另提供無線耳機導覽機，接收距離約 100 公尺。</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="ico">🆘</span>緊急聯絡</h3>
+        <div class="big">112<small>歐盟通用緊急電話</small></div>
+        <ul>
+          <li>駐荷蘭台北代表處 +31-70-250-2000</li>
+          <li>駐歐盟兼駐比利時代表處 +32-2-287-2800</li>
+          <li>駐法國台北代表處 +33-1-4439-8830</li>
+          <li>外交部旅外急難救助：+886-800-085-095</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><span class="ico">🗣️</span>語言與小費</h3>
+        <p>荷蘭語／法語／荷語＋法語（布魯塞爾），觀光區英語皆通。團費已含導遊領隊小費 €120。餐廳帳單通常已含服務費，滿意可額外留零頭。</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="ico">🛡️</span>安全提醒</h3>
+        <p>巴黎地鐵、艾菲爾鐵塔、聖心堂階梯、老佛爺百貨周邊扒手多；阿姆斯特丹注意腳踏車道勿站立；布魯塞爾黃金廣場人潮擁擠請顧好隨身物品。護照影本與正本分開放。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= ALERTS ================= -->
+<section id="alerts">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>行前提醒</h2><span class="latin">Before You Go</span>
+    </div>
+
+    <div class="alert">
+      <h3>⚠️ 雙宮休館日與行程表日期剛好重疊，請向旅行社確認</h3>
+      <p>行程表第 7 天（4/12）是<b>週一</b>，凡爾賽宮官方<b>每週一休館</b>；第 8 天（4/13）是<b>週二</b>，羅浮宮官方<b>每週二休館</b>。</p>
+      <p>旅行社通常會把兩天對調或另行調整（例如週一先走羅浮宮、週二改走凡爾賽宮），但這份行程表上還沒反映。建議出發前打給佳騰 07-342-5656 確認實際入內日期，以免「法國雙宮」變成只看外觀。</p>
+    </div>
+
+    <div class="alert info">
+      <h3>🛂 歐盟入境新制：EES 已上路、ETIAS 可能在 2027 啟用 <span class="tag blue">需追蹤</span></h3>
+      <p><b>EES 出入境系統</b>（2026 年 4 月起全面運作）：首次入境申根區會在阿姆斯特丹機場採集指紋與臉部影像，通關時間可能較長，請耐心排隊。</p>
+      <p><b>ETIAS 旅行授權</b>：台灣護照免簽，但 ETIAS 上路後需在出發前線上申請（費用 €20，18 歲以下與 70 歲以上免費，效期 3 年）。歐盟已把原訂 2026 Q4 的啟用時間延後，2027 年啟用的可能性高，啟用後有約 6 個月過渡期。出發前 1–2 個月請再查官方網站 <a href="https://travel-europe.europa.eu/etias_en" target="_blank">travel-europe.europa.eu/etias</a>，或請旅行社協助。</p>
+      <p>護照效期需超過離開申根區日期 3 個月以上（建議 6 個月以上），且為 10 年內核發。</p>
+    </div>
+
+    <div class="alert info">
+      <h3>🌷 庫肯霍夫 2027 花季：3/18 – 5/9，4/9 正值盛開期</h3>
+      <p>2027 年開放日期為 3 月 18 日至 5 月 9 日，每日 08:00–19:00。歷年鬱金香盛開高峰落在 4 月 10 日至 30 日之間，本團 4/9 造訪，若春天氣溫正常應能看到大片鬱金香；若遇寒春則部分品種可能還沒全開，以現場為準。中旬為人潮高峰，建議早點進園。</p>
+    </div>
+
+    <div class="alert info">
+      <h3>🖼️ 羅浮宮 2026 年起新制</h3>
+      <p>2026 年 1 月起非歐盟訪客門票調漲為 €32（團體 €28），入館採預約時段制且安檢嚴格，建議輕裝入館，大型背包與行李需寄物。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FLIGHTS ================= -->
+<section id="flights">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>參考航班</h2><span class="latin">Flights · Cathay Pacific</span>
+    </div>
+    <table>
+      <thead><tr><th>航班</th><th>航段</th><th>起飛</th><th>抵達</th><th>日期</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">CX 459</span></td><td><span class="route">高雄 → 香港</span></td><td><span class="time">19:10</span></td><td><span class="time">21:20</span></td><td><span class="date">4/6（二）</span></td></tr>
+        <tr><td><span class="code">CX 271</span></td><td><span class="route">香港 → 阿姆斯特丹</span></td><td><span class="time">23:15</span></td><td><span class="time">06:55<sup>+1</sup></span></td><td><span class="date">4/6 → 4/7（三）</span></td></tr>
+        <tr><td><span class="code">CX 260</span></td><td><span class="route">巴黎 → 香港</span></td><td><span class="time">12:05</span></td><td><span class="time">06:15<sup>+1</sup></span></td><td><span class="date">4/14 → 4/15（四）</span></td></tr>
+        <tr><td><span class="code">CX 432</span></td><td><span class="route">香港 → 高雄</span></td><td><span class="time">08:35</span></td><td><span class="time">10:15</span></td><td><span class="date">4/15（四）</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note">去程香港轉機約 2 小時，長程段約 13 小時；回程香港轉機約 2 小時 20 分。如遇航空公司航班變動，旅行社保有最後變動之權利。</p>
+  </div>
+</section>
+
+<!-- ================= DAYS ================= -->
+<section id="days">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>每日行程</h2><span class="latin">Day by Day</span>
+    </div>
+
+    <!-- DAY 1 -->
+    <article class="day fly">
+      <div class="side"><div><div class="d">Day</div><div class="n">01</div></div><div><div class="date">4 月 6 日</div><div class="wd">星期二</div></div><div class="country">TAIWAN → HK</div></div>
+      <div class="body">
+        <h3>高雄 ✈ 香港 ✈ 阿姆斯特丹</h3>
+        <p class="intro">今日前往高雄小港機場，搭乘國泰航空經香港飛往荷蘭阿姆斯特丹，展開為期 10 天的歐洲之旅。</p>
+        <div class="meta">
+          <div><div class="k">Meals</div><div class="meals"><span><em>早</em>✕</span><span><em>午</em>✕</span><span><em>晚</em>機上簡餐</span></div></div>
+          <div><div class="k">Stay</div><div class="v">夜宿機上</div></div>
+        </div>
+        <div class="tip">晚上 7 點多起飛，建議下午先吃飽再到機場；香港段轉機 2 小時，長程段上機後調整為歐洲時間作息，盡量睡。</div>
+      </div>
+    </article>
+
+    <!-- DAY 2 -->
+    <article class="day nl">
+      <div class="side"><div><div class="d">Day</div><div class="n">02</div></div><div><div class="date">4 月 7 日</div><div class="wd">星期三</div></div><div class="country">NETHERLANDS</div></div>
+      <div class="body">
+        <h3>桑斯安斯風車村・沃倫丹・阿姆斯特丹</h3>
+        <p class="route">阿姆斯特丹 <b>→</b> 桑斯安斯 Zaanse Schans <b>→</b> 沃倫丹 Volendam <b>→</b> 阿姆斯特丹市區＋運河遊船</p>
+        <div class="spots">
+          <div class="spot"><h4>桑斯安斯風車村 <span class="en">Zaanse Schans</span> <span class="visit">下車參觀</span></h4><p>保留多座造型各異的風車，各自擔負榨油、製漆、鋸木等古老工藝，至今仍緩緩轉動。村內有傳統木鞋工廠，展示白楊木挖空製作荷蘭木鞋的過程。</p></div>
+          <div class="spot"><h4>沃倫丹北海漁村 <span class="en">Volendam</span> <span class="visit">下車參觀</span></h4><p>六百年歷史的荷蘭漁村，彩色木屋、傳統漁港環繞湖畔如珍珠項鍊，保有純樸水鄉風情。</p></div>
+          <div class="spot"><h4>阿姆斯特丹市區 <span class="en">Amsterdam</span> <span class="visit">下車參觀</span></h4><p>舊皇宮、水壩廣場、全歐最負盛名的紅燈區櫥窗。</p></div>
+          <div class="spot"><h4>鑽石切割工廠 <span class="visit in">入內參觀</span></h4><p>鑽石交易 16 世紀即引進荷蘭，阿姆斯特丹至今仍是全球重要鑽石中心之一。</p></div>
+          <div class="spot"><h4>北方威尼斯運河遊船 <span class="star">★ 特別安排</span></h4><p>搭乘玻璃船遊覽阿姆斯特丹運河。</p></div>
+        </div>
+        <div class="meta">
+          <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>北海魚排料理</span><span><em>晚</em>中式料理</span></div></div>
+          <div><div class="k">Stay</div><div class="v">NH Amsterdam Zuid／Crowne Plaza Amsterdam South／Hyatt Place Amsterdam Airport 或同級 4★</div></div>
+        </div>
+        <div class="tip">清晨 6:55 落地直接開始玩，是最累的一天。風車村臨海風大，請把風衣放在隨身包。</div>
+      </div>
+    </article>
+
+    <!-- DAY 3 -->
+    <article class="day nl">
+      <div class="side"><div><div class="d">Day</div><div class="n">03</div></div><div><div class="date">4 月 8 日</div><div class="wd">星期四</div></div><div class="country">NETHERLANDS</div></div>
+      <div class="body">
+        <h3>羊角村水上童話小鎮・烏特勒支</h3>
+        <p class="route">阿姆斯特丹 <b>→</b> 羊角村 Giethoorn <b>→</b> 烏特勒支 Utrecht <b>→</b> 阿姆斯特丹</p>
+        <div class="spots">
+          <div class="spot"><h4>羊角村 <span class="en">Giethoorn</span> <span class="star">★ 遊船</span></h4><p>有「荷蘭威尼斯」「綠色威尼斯」之稱，村落以蜿蜒運河與小橋相連，沒有車流。屋頂由蘆葦編成，冬暖夏涼，過去是窮苦就地取材，今日反成高收入職業的住家。</p></div>
+          <div class="spot"><h4>烏特勒支 <span class="en">Utrecht</span></h4><p>荷蘭交通樞紐，以雙層運河景致聞名，是米飛兔的故鄉，擁有全荷蘭最高的主教塔與烏特勒支大學。</p></div>
+          <div class="spot"><h4>聖馬丁主教座堂 <span class="en">Domkerk</span></h4><p>始建於 1254 年的哥德式教堂，曾是荷蘭最大教堂，擁有壯觀拱頂與精美彩繪玻璃。教堂前有 Graaf Jan van Nassau 雕像。</p></div>
+        </div>
+        <div class="meta">
+          <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>運河水鄉羊角村豬肋排</span><span><em>晚</em>中式料理</span></div></div>
+          <div><div class="k">Stay</div><div class="v">NH Amsterdam Zuid／Crowne Plaza Amsterdam South／Hyatt Place Amsterdam Airport 或同級 4★</div></div>
+        </div>
+        <div class="tip">羊角村遊船是開放式小船，4 月水面風冷，帶帽子與圍巾。烏特勒支市中心運河邊咖啡館很多，有自由時間可喝杯咖啡。</div>
+      </div>
+    </article>
+
+    <!-- DAY 4 -->
+    <article class="day nl">
+      <div class="side"><div><div class="d">Day</div><div class="n">04</div></div><div><div class="date">4 月 9 日</div><div class="wd">星期五</div></div><div class="country">NETHERLANDS</div></div>
+      <div class="body">
+        <h3>庫肯霍夫花園・鹿特丹</h3>
+        <p class="route">阿姆斯特丹 <b>→</b> 庫肯霍夫花園 Keukenhof <b>→</b> 鹿特丹 Rotterdam（方塊屋＋市集廣場）</p>
+        <div class="spots">
+          <div class="spot"><h4>庫肯霍夫花園 <span class="en">Keukenhof</span> <span class="visit">下車參觀</span></h4><p>百萬朵鬱金香、水仙、風信子與各類球莖花構成繁茂色彩，襯以古木樹林、池塘噴泉與雕像，是攝影者的天堂。遇天候或花田修整等不可抗力因素，花況以現場為準。</p></div>
+          <div class="spot"><h4>鹿特丹 <span class="en">Rotterdam</span></h4><p>現代化橋樑、摩登建築與往來港口的巨型船隻，是鹿特丹的第一印象。方塊屋是荷蘭最具代表性的現代建築。</p></div>
+          <div class="spot"><h4>鹿特丹時尚市場 <span class="en">Markthal</span> <span class="visit in">入內參觀</span></h4><p>拱形建築內部是巨幅彩繪穹頂，市集廣場周邊可自由逛街用餐。</p></div>
+        </div>
+        <div class="meta">
+          <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>中式料理</span><span><em>晚</em><span class="self">自理（發放餐費 €20／人）</span></span></div></div>
+          <div><div class="k">Stay</div><div class="v">Van Der Valk Hotel／Hilton Rotterdam／NH Atlanta Rotterdam／citizenM Rotterdam／Inntel Hotel 或同級 4★</div></div>
+        </div>
+        <div class="tip">庫肯霍夫 2027 年 3/18–5/9 開放，4 月中是高峰，花園很大建議穿好走的鞋。Markthal 內有不少荷蘭小吃攤（炸魚、生鯡魚、stroopwafel），晚餐自理可在此解決。</div>
+      </div>
+    </article>
+
+    <!-- DAY 5 -->
+    <article class="day be">
+      <div class="side"><div><div class="d">Day</div><div class="n">05</div></div><div><div class="date">4 月 10 日</div><div class="wd">星期六</div></div><div class="country">BELGIUM</div></div>
+      <div class="body">
+        <h3>布魯日・布魯塞爾</h3>
+        <p class="route">鹿特丹 <b>→</b> 布魯日 Brugge <b>→</b> 布魯塞爾 Brussel</p>
+        <div class="spots">
+          <div class="spot"><h4>布魯日 <span class="en">Brugge</span> <span class="visit">下車參觀</span></h4><p>「中世紀睡美人」，比利時保存最完整的中古世紀小鎮，水道交錯、五十座橋樑橫跨河上，舊市區盡是石板古道與中世紀建築，2000 年列入世界文化遺產。參觀德佛特鐘樓、市政廳。</p></div>
+          <div class="spot"><h4>布魯塞爾 <span class="en">Brussel</span> <span class="visit">下車參觀</span></h4><p>「歐洲之心」。造訪世界馳名的尿尿小童（布魯塞爾最長壽市民），與雨果譽為「歐洲最華麗客廳」的黃金廣場，四周盡是文藝復興與巴洛克式華麗建築。</p></div>
+        </div>
+        <div class="meta">
+          <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>中式料理</span><span><em>晚</em>海之珍珠國寶淡菜珍饌</span></div></div>
+          <div><div class="k">Stay</div><div class="v">Holiday Inn Brussels Schuman by IHG／NH Collection Brussels Centre 或同級 4★</div></div>
+        </div>
+        <div class="tip">比利時三寶：巧克力、鬆餅、啤酒。布魯日與黃金廣場周邊巧克力店密集，Neuhaus、Godiva、Pierre Marcolini 都是當地起家。週六布魯日遊客多，跟緊團體。</div>
+      </div>
+    </article>
+
+    <!-- DAY 6 -->
+    <article class="day fr">
+      <div class="side"><div><div class="d">Day</div><div class="n">06</div></div><div><div class="date">4 月 11 日</div><div class="wd">星期日</div></div><div class="country">FRANCE</div></div>
+      <div class="body">
+        <h3>巴黎：蒙馬特・塞納河午宴・艾菲爾鐵塔・香榭麗舍</h3>
+        <p class="route">布魯塞爾 <b>→</b> 巴黎（聖心堂＋畫家村＋塞納河遊船＋艾菲爾鐵塔＋香榭麗舍大道）</p>
+        <div class="spots">
+          <div class="spot"><h4>聖心堂 <span class="en">Sacré-Cœur</span> <span class="visit">下車參觀</span></h4><p>坐落於巴黎北部蒙馬特高地，以耶穌聖心為主保，保羅・阿巴迪設計，兼具羅馬與拜占庭風格的折衷主義建築。</p></div>
+          <div class="spot"><h4>蒙馬特畫家村 <span class="en">Place du Tertre</span> <span class="visit">下車參觀</span></h4><p>以梧桐樹蔭下的小丘廣場為中心，環繞彎曲小巷、特色小店、咖啡館與達利美術館、傳統風車，瀰漫老巴黎味道。</p></div>
+          <div class="spot"><h4>塞納河遊船午宴 <span class="star">★ 特別安排</span></h4><p>在巴黎最美的河上，一邊享用法式午餐一邊欣賞兩岸經典景觀。</p></div>
+          <div class="spot"><h4>艾菲爾鐵塔 <span class="en">Tour Eiffel</span> <span class="visit">下車參觀</span></h4><p>1889 年為紀念法國大革命 100 週年與萬國博覽會而建，高 324 公尺，保持 45 年世界最高建築紀錄。</p></div>
+          <div class="spot"><h4>香榭麗舍大道・凱旋門・協和廣場 <span class="visit">下車參觀</span></h4><p>全長約 2 公里，西起凱旋門、東至協和廣場，匯集頂級精品旗艦店、米其林餐廳與百年甜點店，世界三大逛街大道之一。</p></div>
+        </div>
+        <div class="meta">
+          <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>★ 塞納河遊船午宴</span><span><em>晚</em>巴黎百年時光地窖餐廳</span></div></div>
+          <div><div class="k">Stay</div><div class="v">Hotel Mercure Paris Saint／H4 Wyndham Paris Pleyel／voco Paris Porte de Clichy by IHG 或同級 4★</div></div>
+        </div>
+        <div class="tip warn"><b>扒手高風險日</b>：聖心堂階梯有「幸運繩」搭訕、鐵塔下有連署騙局，不要停下來簽名或讓人綁東西在手上。</div>
+      </div>
+    </article>
+
+    <!-- DAY 7 -->
+    <article class="day fr">
+      <div class="side"><div><div class="d">Day</div><div class="n">07</div></div><div><div class="date">4 月 12 日</div><div class="wd">星期一</div></div><div class="country">FRANCE</div></div>
+      <div class="body">
+        <h3>凡爾賽宮・聖母院・左岸・莎士比亞書局</h3>
+        <p class="route">巴黎 <b>→</b> 凡爾賽宮 Château de Versailles <b>→</b> 聖母院 <b>→</b> 左岸 <b>→</b> 莎士比亞書局</p>
+        <div class="spots">
+          <div class="spot"><h4>凡爾賽宮 <span class="en">Château de Versailles</span> <span class="star">★ 入內</span></h4><p>路易十四至路易十六的主要皇家宅邸，經數代建築師、雕刻家與園林師不斷潤飾，一個多世紀以來是歐洲王室官邸的代表作。古典主義三段式立面，1979 年列入世界文化遺產。</p></div>
+          <div class="spot"><h4>巴黎聖母院 <span class="en">Notre-Dame</span></h4><p>位於西堤島上，約建於 1163–1250 年，哥德式教堂群中極具代表性的一座。2019 年大火後於 2024 年 12 月重新開放。</p></div>
+          <div class="spot"><h4>左岸 <span class="en">Rive Gauche</span></h4><p>塞納河南岸，長久以來是巴黎文藝與知識中心，匯聚索邦大學、花神咖啡館、雙叟咖啡館與奧賽美術館。</p></div>
+          <div class="spot"><h4>莎士比亞書局 <span class="en">Shakespeare and Company</span></h4><p>全球最具傳奇色彩的獨立書店之一，森林綠外牆、以英文書為主，《午夜巴黎》取景地，海明威等文豪曾流連於此。</p></div>
+        </div>
+        <div class="meta">
+          <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>中式餐廳</span><span><em>晚</em>法式田螺・香橙鴨風味餐</span></div></div>
+          <div><div class="k">Stay</div><div class="v">Hotel Mercure Paris Saint／H4 Wyndham Paris Pleyel／voco Paris Porte de Clichy by IHG 或同級 4★</div></div>
+        </div>
+        <div class="tip warn"><b>注意</b>：4/12 是星期一，凡爾賽宮官方每週一休館（花園照常開放）。請向旅行社確認這天是否會與第 8 天對調。</div>
+      </div>
+    </article>
+
+    <!-- DAY 8 -->
+    <article class="day fr">
+      <div class="side"><div><div class="d">Day</div><div class="n">08</div></div><div><div class="date">4 月 13 日</div><div class="wd">星期二</div></div><div class="country">FRANCE</div></div>
+      <div class="body">
+        <h3>羅浮宮・老佛爺百貨・方正藥妝</h3>
+        <p class="route">羅浮宮 Musée du Louvre <b>→</b> 拉法葉（老佛爺）百貨 <b>→</b> 方正藥妝 Corre Opéra</p>
+        <div class="spots">
+          <div class="spot"><h4>羅浮宮 <span class="en">Musée du Louvre</span> <span class="star">★ 入內</span></h4><p>全球面積最大、參觀人數最多的博物館，館藏逾 38,000 件橫跨史前至 21 世紀。鎮館三寶：《蒙娜麗莎》、《米洛的維納斯》、《薩莫色雷斯的勝利女神》。</p></div>
+          <div class="spot"><h4>老佛爺百貨奧斯曼店 <span class="en">Galeries Lafayette</span></h4><p>奧斯曼大道 40 號，毗鄰巴黎歌劇院，佔地 7 萬平方米，從大眾品牌到頂級奢侈品一應俱全。新藝術風格的華麗穹頂與可眺望巴黎全景的天台是必看。</p></div>
+          <div class="spot"><h4>方正藥妝 <span class="en">Corre Opéra</span></h4><p>華人熟知的巴黎藥妝店，法國保養品牌價格優惠，可退稅。</p></div>
+        </div>
+        <div class="meta">
+          <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em><span class="self">逛街自理</span></span><span><em>晚</em>★ 法式香頌經典海鮮饗宴</span></div></div>
+          <div><div class="k">Stay</div><div class="v">Hotel Mercure Paris Saint／H4 Wyndham Paris Pleyel／voco Paris Porte de Clichy by IHG 或同級 4★</div></div>
+        </div>
+        <div class="tip warn"><b>注意</b>：4/13 是星期二，羅浮宮官方每週二休館。請向旅行社確認實際入館日。</div>
+        <div class="tip">退稅：單店單日消費滿 €100 即可辦理，老佛爺百貨內有退稅櫃檯，記得帶護照。退稅單在戴高樂機場 PABLO 機器掃描後才算完成。</div>
+      </div>
+    </article>
+
+    <!-- DAY 9 -->
+    <article class="day fly">
+      <div class="side"><div><div class="d">Day</div><div class="n">09</div></div><div><div class="date">4 月 14 日</div><div class="wd">星期三</div></div><div class="country">FRANCE → HK</div></div>
+      <div class="body">
+        <h3>巴黎 ✈ 香港</h3>
+        <p class="intro">早餐後前往戴高樂機場，搭乘 CX260 於 12:05 起飛返回香港。</p>
+        <div class="meta">
+          <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>機上簡餐</span><span><em>晚</em>機上簡餐</span></div></div>
+          <div><div class="k">Stay</div><div class="v">夜宿機上</div></div>
+        </div>
+        <div class="tip">中午班機，建議 09:00 前抵達機場。要退稅的請預留時間跑 PABLO 機器與櫃檯，且退稅商品需放隨身或在托運前能出示。</div>
+      </div>
+    </article>
+
+    <!-- DAY 10 -->
+    <article class="day fly">
+      <div class="side"><div><div class="d">Day</div><div class="n">10</div></div><div><div class="date">4 月 15 日</div><div class="wd">星期四</div></div><div class="country">HK → TAIWAN</div></div>
+      <div class="body">
+        <h3>香港 ✈ 高雄</h3>
+        <p class="intro">清晨 06:15 抵達香港，轉搭 CX432 於 08:35 起飛，10:15 返抵高雄，結束從荷蘭風車運河、比利時古城到巴黎的 10 天旅程。</p>
+        <div class="meta">
+          <div><div class="k">Meals</div><div class="meals"><span><em>早</em>機上簡餐</span><span><em>午</em>✕</span><span><em>晚</em>✕</span></div></div>
+          <div><div class="k">Stay</div><div class="v">溫暖的家</div></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= PRICE ================= -->
+<section id="price">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>團費</h2><span class="latin">Price</span>
+    </div>
+    <div class="price">
+      <div class="card"><h3>20 + 1 人成團</h3><div class="big">NT$ 134,800<small>／人</small></div></div>
+      <div class="card"><h3>25 + 1 人成團</h3><div class="big">NT$ 132,800<small>／人</small></div></div>
+      <div class="card"><h3>單人房差</h3><div class="big">NT$ 25,000<small>／人</small></div></div>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <h3>團費已含</h3>
+      <div class="inc">
+        <span>導遊領隊小費 €120</span><span>歐洲網卡 1 張／人</span><span>萬用轉接頭</span><span>無線耳機導覽機</span><span>塞納河遊船午宴</span><span>凡爾賽宮・羅浮宮入內</span><span>羊角村・阿姆斯特丹遊船</span>
+      </div>
+      <p style="margin-top:12px">自理餐：第 4 天晚餐（發 €20／人）、第 8 天午餐。其他未列明項目請向旅行社確認。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PACK ================= -->
+<section id="pack">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>打包清單</h2><span class="latin">Packing List</span>
+      <p>依 4 月中旬西歐氣候（5–17°C、多陣雨）整理。</p>
+    </div>
+    <div class="card">
+      <div class="pack">
+        <div><h4>證件與文件</h4><ul><li>護照（效期 6 個月以上）＋影本、電子檔</li><li>ETIAS 核准信（若已啟用）</li><li>旅平險保單、信用卡（含感應）、少量歐元現金</li><li>行程表、飯店名單（可把本頁存到手機）</li></ul></div>
+        <div><h4>衣著（洋蔥式）</h4><ul><li>防風防水外套或薄羽絨 1 件</li><li>薄毛衣／針織 2–3 件、長袖上衣</li><li>圍巾、帽子（遊船與風車村很需要）</li><li>好走防水的鞋（石板路多）、備用鞋 1 雙</li><li>折疊傘或輕便雨衣</li></ul></div>
+        <div><h4>3C</h4><ul><li>轉接頭（旅行社贈送）、延長線或多孔充電器</li><li>行動電源（放隨身行李，不可托運）</li><li>相機、記憶卡；網卡（旅行社贈送）</li></ul></div>
+        <div><h4>個人用品</h4><ul><li>常備藥（感冒、腸胃、止痛、暈車）</li><li>保濕乳液、護唇膏（歐洲乾燥）</li><li>防曬、太陽眼鏡（4 月紫外線已不弱）</li><li>環保購物袋（歐洲塑膠袋收費）</li><li>隨身防盜包或貼身腰包</li></ul></div>
+        <div><h4>其他</h4><ul><li>行李箱預留空間（巧克力、藥妝、花種球莖只能買有檢疫證明的）</li><li>保溫瓶（歐洲自來水可生飲）</li><li>頸枕、眼罩、耳塞（兩段長程夜航）</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">佳騰旅行社　07-342-5656</div>
+    <p>本頁依旅行社 2027/04/06 出發行程表整理。航班、飯店、餐食以旅行社最終行前說明會資料為準；補充資訊查詢日期為 2026 年 10 月，出發前請再確認。</p>
+    <p style="margin-bottom:4px"><b>補充資訊來源</b></p>
+    <ul>
+      <li>庫肯霍夫 2027 開放日期：<a href="https://keukenhof.nl/en/" target="_blank">keukenhof.nl</a>、<a href="https://www.visitleiden.com/keukenhof" target="_blank">visitleiden.com</a></li>
+      <li>凡爾賽宮開放時間：<a href="https://en.chateauversailles.fr/" target="_blank">en.chateauversailles.fr</a></li>
+      <li>羅浮宮開放時間與票價：<a href="https://www.louvre.fr/en/hours-admission/admission" target="_blank">louvre.fr</a>、<a href="https://www.thelocal.fr/20251128/non-eu-visitors-will-pay-e10-extra-to-visit-pariss-louvre" target="_blank">The Local</a></li>
+      <li>ETIAS／EES：<a href="https://travel-europe.europa.eu/etias_en" target="_blank">travel-europe.europa.eu</a>、<a href="https://www.ctee.com.tw/news/20250725701005-430701" target="_blank">工商時報</a></li>
+      <li>歐洲夏令時間 2027：<a href="https://www.timeanddate.com/time/change/belgium?year=2027" target="_blank">timeanddate.com</a></li>
+      <li>歐元匯率：<a href="https://invest.cnyes.com/forex/detail/EURTWD" target="_blank">鉅亨網</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
