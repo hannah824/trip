@@ -39,7 +39,7 @@
     --shadow:0 18px 40px -26px rgba(35,38,43,.5);
   }
   @media (prefers-color-scheme:dark){
-    :root{
+    :root:not([data-theme="light"]){
       color-scheme:dark;
       --paper:#141a22;
       --paper-2:#1e2733;
@@ -65,6 +65,32 @@
       --tag-blue-bg:#27374a;
       --shadow:0 18px 40px -26px rgba(0,0,0,.8);
     }
+  }
+  :root[data-theme="dark"]{
+      color-scheme:dark;
+      --paper:#141a22;
+      --paper-2:#1e2733;
+      --card:#1b2330;
+      --ink:#ece4d2;
+      --ink-soft:#a9a391;
+      --line:#34404f;
+      --delft:#8fb3dc;
+      --delft-deep:#0f2742;
+      --tulip:#d9929d;
+      --tulip-soft:#3a2229;
+      --gold:#c9a65a;
+      --gold-soft:#8a7540;
+      --moss:#8fae88;
+      --nav-bg:rgba(20,26,34,.94);
+      --row-alt:#1f2834;
+      --tip-bg:#232b36;
+      --tip-warn-bg:#2e2126;
+      --alert-warn-bg:#2a1d21;
+      --alert-warn-bd:#5a3a41;
+      --alert-info-bg:#1b2634;
+      --alert-info-bd:#33475e;
+      --tag-blue-bg:#27374a;
+      --shadow:0 18px 40px -26px rgba(0,0,0,.8);
   }
   *{box-sizing:border-box;min-width:0}
   html{scroll-behavior:smooth}
@@ -151,6 +177,13 @@
     padding:6px 14px;border-radius:999px;transition:.2s;
   }
   nav.toc a:hover{background:var(--accent-bg);color:#fff}
+
+  nav.toc .wrap{position:relative}
+  #theme-btn{flex:none;position:sticky;right:0;margin-left:auto;font:inherit;font-size:13px;font-weight:500;color:var(--ink-soft);
+    background:var(--nav-bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+  #theme-btn:hover{color:var(--tulip);border-color:var(--tulip)}
+  #theme-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  #theme-btn .ic{font-size:14px;line-height:1}
 
   /* ---------- SECTIONS ---------- */
   section{padding:64px 0 24px}
@@ -361,6 +394,9 @@
     header.hero{padding:36px 0}
   }
 </style>
+<script>
+(function(){try{var t=localStorage.getItem('trip-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+</script>
 </head>
 <body>
 
@@ -401,6 +437,7 @@
     <a href="#days">每日行程</a>
     <a href="#price">費用</a>
     <a href="#pack">打包清單</a>
+    <button type="button" id="theme-btn" aria-label="切換日間或夜間配色"><span class="ic">☾</span><span class="tx">夜間</span></button>
   </div>
 </nav>
 
@@ -849,6 +886,22 @@
     boxes.forEach(function(b){b.checked=false;}); st={}; save(st); render();
   });
   render();
+})();
+(function(){
+  var root=document.documentElement, KEY='trip-theme';
+  var btn=document.getElementById('theme-btn'); if(!btn) return;
+  var ic=btn.querySelector('.ic'), tx=btn.querySelector('.tx');
+  var mq=window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function isDark(){ var t=root.getAttribute('data-theme'); return t ? t==='dark' : !!(mq && mq.matches); }
+  function label(){ var d=isDark(); ic.textContent=d?'☀':'☾'; tx.textContent=d?'日間':'夜間'; }
+  btn.addEventListener('click',function(){
+    var next=isDark()?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem(KEY,next); }catch(e){}
+    label();
+  });
+  if(mq && mq.addEventListener){ mq.addEventListener('change',label); }
+  label();
 })();
 </script>
 
