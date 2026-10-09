@@ -174,8 +174,7 @@
     border-bottom:1px solid var(--gold-soft);
   }
   nav.toc .wrap{display:flex;align-items:center;gap:8px;padding-top:8px;padding-bottom:8px}
-  nav.toc .links{display:flex;gap:4px;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-right:28px;
-    mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent);-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent)}
+  nav.toc .links{display:flex;gap:4px;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   nav.toc .links::-webkit-scrollbar{display:none}
   nav.toc a{
     flex:none;white-space:nowrap;text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:500;
@@ -183,11 +182,13 @@
   }
   nav.toc a:hover{background:var(--accent-bg);color:#fff}
 
-  #theme-btn{flex:none;margin-left:4px;font:inherit;font-size:13px;font-weight:500;color:var(--ink-soft);
-    background:var(--nav-bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+  #theme-btn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:13px;font-weight:500;color:var(--ink);
+    background:var(--card);border:1px solid var(--gold-soft);border-radius:999px;padding:9px 14px 9px 11px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+    box-shadow:0 6px 20px -6px rgba(0,0,0,.45)}
   #theme-btn:hover{color:var(--tulip);border-color:var(--tulip)}
   #theme-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-  #theme-btn .ic{font-size:14px;line-height:1}
+  #theme-btn .ic{font-size:16px;line-height:1}
+  @media print{#theme-btn{display:none}}
 
   /* ---------- SECTIONS ---------- */
   section{padding:64px 0 24px}
@@ -466,9 +467,9 @@
     <a href="#price">費用</a>
     <a href="#pack">打包清單</a>
     </div>
-    <button type="button" id="theme-btn" aria-label="切換日間或夜間配色"><span class="ic">☾</span><span class="tx">夜間</span></button>
   </div>
 </nav>
+<button type="button" id="theme-btn" aria-label="切換日間或夜間配色"><span class="ic">☾</span><span class="tx">夜間</span></button>
 
 <!-- ================= INFO ================= -->
 <section id="info">
