@@ -144,7 +144,7 @@
   }
   .eyebrow::before{content:"";width:40px;height:1px;background:var(--hero-gold);flex:none}
   .eyebrow::after{content:"❧";color:var(--hero-gold);font-size:16px;letter-spacing:0}
-  @media (max-width:720px){.eyebrow{font-size:12px;letter-spacing:.2em}.eyebrow::before{width:24px}}
+  @media (max-width:720px){.eyebrow{font-size:11px;letter-spacing:.12em;white-space:nowrap}.eyebrow::before{width:20px}.eyebrow::after{display:none}}
   .hero h1{font-size:clamp(34px,6vw,64px);font-weight:900;letter-spacing:.04em;text-shadow:0 2px 6px rgba(0,0,0,.55),0 0 28px rgba(15,39,66,.6)}
   .hero h1 small{display:block;font-size:.42em;font-weight:700;letter-spacing:.18em;color:#f3e3b4;margin-top:8px;text-shadow:0 1px 3px rgba(0,0,0,.8),0 0 14px rgba(15,39,66,.8)}
   .hero-meta{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:24px;font-size:15px;color:#fff;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,.7)}
@@ -173,15 +173,16 @@
     background:var(--nav-bg);backdrop-filter:blur(8px);
     border-bottom:1px solid var(--gold-soft);
   }
-  nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px;scrollbar-width:none}
+  nav.toc .wrap{display:flex;align-items:center;gap:8px;padding-top:8px;padding-bottom:8px}
+  nav.toc .links{display:flex;gap:4px;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  nav.toc .links::-webkit-scrollbar{display:none}
   nav.toc a{
-    white-space:nowrap;text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:500;
+    flex:none;white-space:nowrap;text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:500;
     padding:6px 14px;border-radius:999px;transition:.2s;
   }
   nav.toc a:hover{background:var(--accent-bg);color:#fff}
 
-  nav.toc .wrap{position:relative}
-  #theme-btn{flex:none;position:sticky;right:0;margin-left:auto;font:inherit;font-size:13px;font-weight:500;color:var(--ink-soft);
+  #theme-btn{flex:none;margin-left:auto;font:inherit;font-size:13px;font-weight:500;color:var(--ink-soft);
     background:var(--nav-bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
   #theme-btn:hover{color:var(--tulip);border-color:var(--tulip)}
   #theme-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
@@ -228,12 +229,12 @@
     background:var(--alert-warn-bg);border:1px solid var(--alert-warn-bd);border-left:6px solid var(--accent-bg);
     border-radius:6px;padding:22px 24px;margin-bottom:18px;
   }
-  .alert h3{font-size:18px;color:var(--tulip);margin-bottom:8px;display:flex;gap:10px;align-items:center}
+  .alert h3{font-size:18px;color:var(--tulip);margin-bottom:8px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
   .alert p{margin:0 0 8px;font-size:15px}
   .alert p:last-child{margin-bottom:0}
   .alert.info{background:var(--alert-info-bg);border-color:var(--alert-info-bd);border-left-color:var(--delft)}
   .alert.info h3{color:var(--delft)}
-  .tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;background:var(--tulip-soft);color:var(--tulip);font-weight:700;margin-left:6px;vertical-align:middle}
+  .tag{display:inline-block;flex:none;white-space:nowrap;font-size:12px;padding:2px 10px;border-radius:999px;background:var(--tulip-soft);color:var(--tulip);font-weight:700;margin-left:6px;vertical-align:middle}
   .tag.blue{background:var(--tag-blue-bg);color:var(--delft)}
 
   /* ---------- FLIGHTS ---------- */
@@ -400,9 +401,16 @@
     .wx{grid-template-columns:repeat(3,1fr)}
     section{padding:44px 0 16px}
     thead{display:none}
-    tbody td{display:block;border-top:none;padding:4px 16px}
-    tbody tr td:first-child{padding-top:14px}
-    tbody tr td:last-child{padding-bottom:14px;border-bottom:1px solid var(--line)}
+    tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:2px 12px;padding:12px 16px;border-top:1px solid var(--line)}
+    tbody td{display:block;border-top:none;padding:0;background:none!important}
+    tbody td:nth-child(1){grid-column:1}
+    tbody td:nth-child(2){grid-column:2;text-align:right;align-self:center}
+    tbody td:nth-child(3),tbody td:nth-child(4){padding-top:6px}
+    tbody td:nth-child(3)::before,tbody td:nth-child(4)::before{display:block;font-size:11px;letter-spacing:.15em;color:var(--gold);font-family:"Cormorant Garamond",serif;font-weight:600}
+    tbody td:nth-child(3)::before{content:"DEPART"}
+    tbody td:nth-child(4)::before{content:"ARRIVE"}
+    tbody td:nth-child(5){grid-column:1 / -1;padding-top:4px}
+    tbody tr:nth-child(even){background:var(--row-alt)}
   }
   @media print{
     nav.toc{display:none}
@@ -448,6 +456,7 @@
 
 <nav class="toc">
   <div class="wrap">
+    <div class="links">
     <a href="#info">實用資訊</a>
     <a href="#alerts">行前提醒</a>
     <a href="#flights">航班</a>
@@ -455,6 +464,7 @@
     <a href="#days">每日行程</a>
     <a href="#price">費用</a>
     <a href="#pack">打包清單</a>
+    </div>
     <button type="button" id="theme-btn" aria-label="切換日間或夜間配色"><span class="ic">☾</span><span class="tx">夜間</span></button>
   </div>
 </nav>
