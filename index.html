@@ -8,21 +8,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#f6f0e4;
-    --paper-2:#ede4d2;
-    --ink:#1e2a35;
-    --ink-soft:#4e5a66;
-    --line:#d9cdb6;
-    --delft:#1e4a78;
-    --delft-deep:#122f4e;
-    --tulip:#d6472c;
-    --tulip-soft:#f6d9cf;
-    --gold:#c49a3c;
-    --moss:#5a7352;
-    --nl:#ef7d1a;
-    --be:#f3c623;
-    --fr:#2a5fb7;
-    --shadow:0 18px 40px -24px rgba(30,42,53,.45);
+    --paper:#f3eee3;
+    --paper-2:#e9e1d0;
+    --card:#fbf8f1;
+    --ink:#23262b;
+    --ink-soft:#5a5c62;
+    --line:#d8ccb4;
+    --delft:#1c3f66;
+    --delft-deep:#0f2742;
+    --tulip:#7d2b3a;
+    --tulip-soft:#efdcdd;
+    --gold:#b4903d;
+    --gold-soft:#e6d6ae;
+    --moss:#4f6b4c;
+    --nl:#2e5c8f;
+    --be:#5a3b2e;
+    --fr:#6e2535;
+    --shadow:0 18px 40px -26px rgba(35,38,43,.5);
   }
   *{box-sizing:border-box;min-width:0}
   html{scroll-behavior:smooth}
@@ -35,8 +37,8 @@
     line-height:1.75;
     overflow-x:hidden;
     background-image:
-      radial-gradient(circle at 15% 10%, rgba(214,71,44,.06), transparent 40%),
-      radial-gradient(circle at 85% 90%, rgba(30,74,120,.08), transparent 45%);
+      radial-gradient(circle at 12% 8%, rgba(180,144,61,.10), transparent 38%),
+      radial-gradient(circle at 88% 92%, rgba(28,63,102,.10), transparent 42%);
   }
   h1,h2,h3,h4{font-family:"Noto Serif TC",serif;margin:0;line-height:1.3}
   .latin{font-family:"Cormorant Garamond",serif;letter-spacing:.08em}
@@ -47,19 +49,22 @@
   header.hero{
     position:relative;
     color:#fff;
-    background:linear-gradient(135deg,var(--delft-deep) 0%,var(--delft) 55%,#2f6ea8 100%);
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(180,144,61,.22), transparent 55%),
+      linear-gradient(160deg,var(--delft-deep) 0%,var(--delft) 60%,#24507f 100%);
     overflow:hidden;
     padding:72px 0 64px;
   }
   header.hero::before{
     content:"";position:absolute;inset:0;
-    background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.035) 46px 48px);
+    background:
+      radial-gradient(circle at 50% 50%, rgba(255,255,255,.05) 0 1px, transparent 1.5px) 0 0/28px 28px,
+      radial-gradient(circle at 50% 50%, rgba(230,214,174,.07) 0 1px, transparent 1.5px) 14px 14px/28px 28px;
     pointer-events:none;
   }
   header.hero::after{
-    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
-    background:radial-gradient(circle,rgba(214,71,44,.55),rgba(214,71,44,0) 65%);
-    pointer-events:none;
+    content:"";position:absolute;inset:18px;border:1px solid rgba(230,214,174,.28);outline:1px solid rgba(230,214,174,.12);outline-offset:4px;
+    pointer-events:none;border-radius:4px;
   }
   .hero .wrap{position:relative;z-index:1}
   .eyebrow{
@@ -67,16 +72,17 @@
     font-family:"Cormorant Garamond",serif;font-size:15px;letter-spacing:.3em;text-transform:uppercase;
     color:rgba(255,255,255,.75);margin-bottom:18px;
   }
-  .eyebrow::before{content:"";width:40px;height:1px;background:var(--gold);flex:none}
+  .eyebrow::before{content:"";width:40px;height:1px;background:var(--gold-soft);flex:none}
+  .eyebrow::after{content:"❧";color:var(--gold-soft);font-size:16px;letter-spacing:0}
   @media (max-width:720px){.eyebrow{font-size:12px;letter-spacing:.2em}.eyebrow::before{width:24px}}
   .hero h1{font-size:clamp(34px,6vw,64px);font-weight:900;letter-spacing:.04em;text-shadow:0 2px 0 rgba(0,0,0,.15)}
-  .hero h1 small{display:block;font-size:.42em;font-weight:500;letter-spacing:.2em;color:#f1d7a4;margin-top:8px}
+  .hero h1 small{display:block;font-size:.42em;font-weight:500;letter-spacing:.2em;color:var(--gold-soft);margin-top:8px}
   .hero-meta{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:28px;font-size:15px;color:rgba(255,255,255,.9)}
-  .hero-meta b{color:#f1d7a4;font-weight:500;margin-right:6px;font-family:"Cormorant Garamond",serif;letter-spacing:.15em;font-size:13px}
+  .hero-meta b{color:var(--gold-soft);font-weight:500;margin-right:6px;font-family:"Cormorant Garamond",serif;letter-spacing:.15em;font-size:13px}
   .flags{display:flex;gap:10px;margin-top:34px;flex-wrap:wrap}
   .flag{
     display:flex;align-items:center;gap:10px;
-    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.06);border:1px solid rgba(230,214,174,.35);
     padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;backdrop-filter:blur(4px);
   }
   .flag i{display:inline-block;width:26px;height:18px;border-radius:3px;overflow:hidden;position:relative}
@@ -85,41 +91,41 @@
   .flag.fr i{background:linear-gradient(90deg,#0055a4 0 33%,#fff 33% 66%,#ef4135 66%)}
   .highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:38px}
   .hl{
-    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:16px 18px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(230,214,174,.35);border-radius:6px;padding:16px 18px;position:relative;
   }
   @media (prefers-reduced-motion:no-preference){.hl{animation:rise .8s ease both}.hl:nth-child(2){animation-delay:.12s}.hl:nth-child(3){animation-delay:.24s}}
-  .hl .k{font-size:12px;letter-spacing:.25em;color:#f1d7a4;font-family:"Cormorant Garamond",serif;text-transform:uppercase}
+  .hl .k{font-size:12px;letter-spacing:.25em;color:var(--gold-soft);font-family:"Cormorant Garamond",serif;text-transform:uppercase}
   .hl .v{font-family:"Noto Serif TC",serif;font-size:19px;font-weight:700;margin-top:4px}
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
   /* ---------- NAV ---------- */
   nav.toc{
     position:sticky;top:0;z-index:20;
-    background:rgba(246,240,228,.92);backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
+    background:rgba(243,238,227,.94);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--gold-soft);
   }
   nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px;scrollbar-width:none}
   nav.toc a{
     white-space:nowrap;text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:500;
     padding:6px 14px;border-radius:999px;transition:.2s;
   }
-  nav.toc a:hover{background:var(--tulip-soft);color:var(--tulip)}
+  nav.toc a:hover{background:var(--tulip);color:#fff}
 
   /* ---------- SECTIONS ---------- */
   section{padding:64px 0 24px}
   .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:28px;flex-wrap:wrap}
   .sec-head h2{font-size:30px;font-weight:900;position:relative;padding-left:18px}
-  .sec-head h2::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:5px;background:var(--tulip);border-radius:3px}
+  .sec-head h2::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;background:var(--gold);box-shadow:5px 0 0 -1px var(--tulip)}
   .sec-head .latin{color:var(--gold);font-size:16px;text-transform:uppercase}
   .sec-head p{margin:0;color:var(--ink-soft);font-size:14px;flex-basis:100%}
 
   /* ---------- INFO CARDS ---------- */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
   .card{
-    background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;
+    background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 22px 20px;
     box-shadow:var(--shadow);position:relative;overflow:hidden;
   }
-  .card::after{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--tulip),var(--gold))}
+  .card::after{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--delft) 0 60%,var(--gold) 60%)}
   .card h3{font-size:17px;display:flex;align-items:center;gap:10px;margin-bottom:10px}
   .card h3 .ico{font-size:22px;line-height:1}
   .card .big{font-family:"Noto Serif TC",serif;font-size:30px;font-weight:900;color:var(--delft);line-height:1.1;margin:4px 0 8px}
@@ -133,7 +139,7 @@
   .wx div{background:var(--paper);border-radius:10px;padding:10px 4px;text-align:center}
   .wx .c{font-size:11px;color:var(--ink-soft);white-space:nowrap}
   .wx .t{font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px;color:var(--delft);white-space:nowrap}
-  .wx .t span{color:var(--tulip)}
+  .wx .t span{color:var(--gold)}
 
   /* clock */
   .clocks{display:flex;gap:10px;margin-top:8px}
@@ -143,25 +149,25 @@
 
   /* ---------- ALERT ---------- */
   .alert{
-    background:#fff8f0;border:1px solid #f0c9a4;border-left:6px solid var(--tulip);
-    border-radius:14px;padding:22px 24px;margin-bottom:18px;
+    background:#f7ecec;border:1px solid #dcc0c3;border-left:6px solid var(--tulip);
+    border-radius:6px;padding:22px 24px;margin-bottom:18px;
   }
   .alert h3{font-size:18px;color:var(--tulip);margin-bottom:8px;display:flex;gap:10px;align-items:center}
   .alert p{margin:0 0 8px;font-size:15px}
   .alert p:last-child{margin-bottom:0}
-  .alert.info{background:#f2f6fb;border-color:#bcd0e8;border-left-color:var(--delft)}
+  .alert.info{background:#eef2f6;border-color:#c3cfdc;border-left-color:var(--delft)}
   .alert.info h3{color:var(--delft)}
   .tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;background:var(--tulip-soft);color:var(--tulip);font-weight:700;margin-left:6px;vertical-align:middle}
-  .tag.blue{background:#dce7f5;color:var(--delft)}
+  .tag.blue{background:#dbe3ec;color:var(--delft)}
 
   /* ---------- FLIGHTS ---------- */
-  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);font-size:15px}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:var(--shadow);font-size:15px}
   thead th{background:var(--delft);color:#fff;font-weight:500;text-align:left;padding:12px 16px;font-size:13px;letter-spacing:.1em}
   tbody td{padding:14px 16px;border-top:1px solid var(--line);vertical-align:middle}
-  tbody tr:nth-child(even) td{background:#fbf8f2}
+  tbody tr:nth-child(even) td{background:#f5f0e5}
   td .code{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:20px;color:var(--delft);letter-spacing:.05em}
   td .time{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600}
-  td .time sup{font-size:11px;color:var(--tulip);font-family:"Noto Sans TC",sans-serif;font-weight:700}
+  td .time sup{font-size:11px;color:var(--gold);font-family:"Noto Sans TC",sans-serif;font-weight:700}
   td .route{font-weight:700}
   td .date{font-size:13px;color:var(--ink-soft)}
   .note{font-size:13px;color:var(--ink-soft);margin-top:10px}
@@ -169,18 +175,18 @@
   /* ---------- DAYS ---------- */
   .day{
     display:grid;grid-template-columns:150px 1fr;gap:0;
-    background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;
     margin-bottom:22px;box-shadow:var(--shadow);
   }
   .day .side{
     padding:24px 18px;color:#fff;position:relative;
     display:flex;flex-direction:column;justify-content:flex-start;gap:4px;
   }
-  .day.nl .side{background:linear-gradient(160deg,#f28c28,#d9641c)}
-  .day.be .side{background:linear-gradient(160deg,#5a5a5a,#232323)}
-  .day.fr .side{background:linear-gradient(160deg,#3a73c9,var(--delft))}
-  .day.fly .side{background:linear-gradient(160deg,#6c7a89,#3f4a56)}
-  .day .side .d{font-family:"Cormorant Garamond",serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+  .day.nl .side{background:linear-gradient(160deg,#35679c,var(--nl) 60%,#1f4670)}
+  .day.be .side{background:linear-gradient(160deg,#6e4a3a,var(--be) 60%,#3d261d)}
+  .day.fr .side{background:linear-gradient(160deg,#8a3446,var(--fr) 60%,#4b1823)}
+  .day.fly .side{background:linear-gradient(160deg,#6d7684,#3e4652)}
+  .day .side .d{font-family:"Cormorant Garamond",serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-soft)}
   .day .side .n{font-family:"Noto Serif TC",serif;font-size:46px;font-weight:900;line-height:1}
   .day .side .date{font-size:14px;margin-top:6px;opacity:.95}
   .day .side .wd{font-size:13px;opacity:.8}
@@ -188,10 +194,10 @@
   .day .body{padding:24px 26px 22px}
   .day h3{font-size:22px;font-weight:700;margin-bottom:6px}
   .day .route{font-size:14px;color:var(--ink-soft);margin-bottom:14px}
-  .day .route b{color:var(--tulip);font-weight:500}
+  .day .route b{color:var(--gold);font-weight:500}
   .day .intro{font-size:15px;color:var(--ink-soft);margin:0 0 14px}
   .spots{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:16px}
-  .spot{background:var(--paper);border-radius:12px;padding:12px 14px}
+  .spot{background:var(--paper);border-radius:4px;border:1px solid var(--paper-2);padding:12px 14px}
   .spot h4{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .spot h4 .en{font-family:"Cormorant Garamond",serif;font-size:14px;color:var(--gold);font-weight:600;letter-spacing:.05em}
   .spot p{margin:4px 0 0;font-size:13.5px;color:var(--ink-soft);line-height:1.65}
@@ -205,8 +211,13 @@
   .meals span{display:flex;gap:8px}
   .meals em{font-style:normal;color:var(--ink-soft);min-width:28px;font-size:12px;padding-top:2px}
   .meals .self{color:var(--tulip)}
-  .tip{margin-top:12px;background:#fff8f0;border-left:3px solid var(--gold);padding:8px 12px;font-size:13.5px;border-radius:0 8px 8px 0}
-  .tip.warn{background:#fdf0ec;border-left-color:var(--tulip)}
+  .hotels{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center}
+  .hotels a{color:var(--delft);text-decoration:none;border-bottom:1px solid var(--gold-soft);padding-bottom:1px;transition:.15s}
+  .hotels a:hover{color:var(--tulip);border-bottom-color:var(--tulip)}
+  .hotels a::after{content:"\2197";font-size:11px;margin-left:2px;color:var(--gold)}
+  .hotels .sep{color:var(--ink-soft);font-size:12px}
+  .tip{margin-top:12px;background:#f6f1e3;border-left:3px solid var(--gold);padding:8px 12px;font-size:13.5px;border-radius:0 4px 4px 0}
+  .tip.warn{background:#f7ecec;border-left-color:var(--tulip)}
   .tip b{color:var(--tulip)}
 
   /* ---------- PRICE ---------- */
@@ -222,7 +233,7 @@
   .pack ul{margin:0;padding-left:20px;color:var(--ink-soft);font-size:14px}
   .pack li{margin:3px 0}
 
-  footer{padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px;font-size:13px;color:var(--ink-soft)}
+  footer{padding:40px 0 60px;border-top:3px double var(--gold-soft);margin-top:40px;font-size:13px;color:var(--ink-soft)}
   footer .brand{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--delft);font-size:18px;margin-bottom:6px}
   footer ul{padding-left:18px;margin:8px 0 0}
   footer li{margin:2px 0}
@@ -452,7 +463,7 @@
         </div>
         <div class="meta">
           <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>北海魚排料理</span><span><em>晚</em>中式料理</span></div></div>
-          <div><div class="k">Stay</div><div class="v">NH Amsterdam Zuid／Crowne Plaza Amsterdam South／Hyatt Place Amsterdam Airport 或同級 4★</div></div>
+          <div><div class="k">Stay</div><div class="v hotels"><a href="https://www.nh-hotels.com/en/hotel/nh-amsterdam-zuid" target="_blank" rel="noopener">NH Amsterdam Zuid</a><span class="sep">／</span><a href="https://www.ihg.com/crowneplaza/hotels/gb/en/amsterdam/amspc/hoteldetail" target="_blank" rel="noopener">Crowne Plaza Amsterdam South</a><span class="sep">／</span><a href="https://www.google.com/maps/search/?api=1&query=Hyatt+Place+Amsterdam+Airport+Hoofddorp" target="_blank" rel="noopener">Hyatt Place Amsterdam Airport</a><span class="sep">或同級 4★</span></div></div>
         </div>
         <div class="tip">清晨 6:55 落地直接開始玩，是最累的一天。風車村臨海風大，請把風衣放在隨身包。</div>
       </div>
@@ -471,7 +482,7 @@
         </div>
         <div class="meta">
           <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>運河水鄉羊角村豬肋排</span><span><em>晚</em>中式料理</span></div></div>
-          <div><div class="k">Stay</div><div class="v">NH Amsterdam Zuid／Crowne Plaza Amsterdam South／Hyatt Place Amsterdam Airport 或同級 4★</div></div>
+          <div><div class="k">Stay</div><div class="v hotels"><a href="https://www.nh-hotels.com/en/hotel/nh-amsterdam-zuid" target="_blank" rel="noopener">NH Amsterdam Zuid</a><span class="sep">／</span><a href="https://www.ihg.com/crowneplaza/hotels/gb/en/amsterdam/amspc/hoteldetail" target="_blank" rel="noopener">Crowne Plaza Amsterdam South</a><span class="sep">／</span><a href="https://www.google.com/maps/search/?api=1&query=Hyatt+Place+Amsterdam+Airport+Hoofddorp" target="_blank" rel="noopener">Hyatt Place Amsterdam Airport</a><span class="sep">或同級 4★</span></div></div>
         </div>
         <div class="tip">羊角村遊船是開放式小船，4 月水面風冷，帶帽子與圍巾。烏特勒支市中心運河邊咖啡館很多，有自由時間可喝杯咖啡。</div>
       </div>
@@ -490,7 +501,7 @@
         </div>
         <div class="meta">
           <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>中式料理</span><span><em>晚</em><span class="self">自理（發放餐費 €20／人）</span></span></div></div>
-          <div><div class="k">Stay</div><div class="v">Van Der Valk Hotel／Hilton Rotterdam／NH Atlanta Rotterdam／citizenM Rotterdam／Inntel Hotel 或同級 4★</div></div>
+          <div><div class="k">Stay</div><div class="v hotels"><a href="https://www.google.com/maps/search/?api=1&query=Van+der+Valk+Hotel+Rotterdam" target="_blank" rel="noopener">Van Der Valk Hotel</a><span class="sep">／</span><a href="https://www.hilton.com/en/hotels/rtmhitw-hilton-rotterdam/" target="_blank" rel="noopener">Hilton Rotterdam</a><span class="sep">／</span><a href="https://www.nh-hotels.com/en/hotel/nh-atlanta-rotterdam" target="_blank" rel="noopener">NH Atlanta Rotterdam</a><span class="sep">／</span><a href="https://www.marriott.com/en-us/hotels/rtmcm-citizenm-rotterdam/overview/" target="_blank" rel="noopener">citizenM Rotterdam</a><span class="sep">／</span><a href="https://www.google.com/maps/search/?api=1&query=Inntel+Hotels+Rotterdam+Centre" target="_blank" rel="noopener">Inntel Hotel</a><span class="sep">或同級 4★</span></div></div>
         </div>
         <div class="tip">庫肯霍夫 2027 年 3/18–5/9 開放，4 月中是高峰，花園很大建議穿好走的鞋。Markthal 內有不少荷蘭小吃攤（炸魚、生鯡魚、stroopwafel），晚餐自理可在此解決。</div>
       </div>
@@ -508,7 +519,7 @@
         </div>
         <div class="meta">
           <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>中式料理</span><span><em>晚</em>海之珍珠國寶淡菜珍饌</span></div></div>
-          <div><div class="k">Stay</div><div class="v">Holiday Inn Brussels Schuman by IHG／NH Collection Brussels Centre 或同級 4★</div></div>
+          <div><div class="k">Stay</div><div class="v hotels"><a href="https://www.ihg.com/holidayinn/hotels/gb/en/brussels/brubr/hoteldetail" target="_blank" rel="noopener">Holiday Inn Brussels Schuman by IHG</a><span class="sep">／</span><a href="https://www.nh-hotels.com/en/hotel/nh-collection-brussels-centre" target="_blank" rel="noopener">NH Collection Brussels Centre</a><span class="sep">或同級 4★</span></div></div>
         </div>
         <div class="tip">比利時三寶：巧克力、鬆餅、啤酒。布魯日與黃金廣場周邊巧克力店密集，Neuhaus、Godiva、Pierre Marcolini 都是當地起家。週六布魯日遊客多，跟緊團體。</div>
       </div>
@@ -529,7 +540,7 @@
         </div>
         <div class="meta">
           <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>★ 塞納河遊船午宴</span><span><em>晚</em>巴黎百年時光地窖餐廳</span></div></div>
-          <div><div class="k">Stay</div><div class="v">Hotel Mercure Paris Saint／H4 Wyndham Paris Pleyel／voco Paris Porte de Clichy by IHG 或同級 4★</div></div>
+          <div><div class="k">Stay</div><div class="v hotels"><a href="https://all.accor.com/hotel/A780/index.en.shtml" target="_blank" rel="noopener">Mercure Paris Saint-Ouen</a><span class="sep">／</span><a href="https://www.google.com/maps/search/?api=1&query=H4+Hotel+Wyndham+Paris+Pleyel+Resort" target="_blank" rel="noopener">H4 Wyndham Paris Pleyel</a><span class="sep">／</span><a href="https://www.ihg.com/voco/hotels/gb/en/clichy/parpc/hoteldetail" target="_blank" rel="noopener">voco Paris Porte de Clichy by IHG</a><span class="sep">或同級 4★</span></div></div>
         </div>
         <div class="tip warn"><b>扒手高風險日</b>：聖心堂階梯有「幸運繩」搭訕、鐵塔下有連署騙局，不要停下來簽名或讓人綁東西在手上。</div>
       </div>
@@ -549,7 +560,7 @@
         </div>
         <div class="meta">
           <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em>中式餐廳</span><span><em>晚</em>法式田螺・香橙鴨風味餐</span></div></div>
-          <div><div class="k">Stay</div><div class="v">Hotel Mercure Paris Saint／H4 Wyndham Paris Pleyel／voco Paris Porte de Clichy by IHG 或同級 4★</div></div>
+          <div><div class="k">Stay</div><div class="v hotels"><a href="https://all.accor.com/hotel/A780/index.en.shtml" target="_blank" rel="noopener">Mercure Paris Saint-Ouen</a><span class="sep">／</span><a href="https://www.google.com/maps/search/?api=1&query=H4+Hotel+Wyndham+Paris+Pleyel+Resort" target="_blank" rel="noopener">H4 Wyndham Paris Pleyel</a><span class="sep">／</span><a href="https://www.ihg.com/voco/hotels/gb/en/clichy/parpc/hoteldetail" target="_blank" rel="noopener">voco Paris Porte de Clichy by IHG</a><span class="sep">或同級 4★</span></div></div>
         </div>
         <div class="tip warn"><b>注意</b>：4/12 是星期一，凡爾賽宮官方每週一休館（花園照常開放）。請向旅行社確認這天是否會與第 8 天對調。</div>
       </div>
@@ -568,7 +579,7 @@
         </div>
         <div class="meta">
           <div><div class="k">Meals</div><div class="meals"><span><em>早</em>飯店內</span><span><em>午</em><span class="self">逛街自理</span></span><span><em>晚</em>★ 法式香頌經典海鮮饗宴</span></div></div>
-          <div><div class="k">Stay</div><div class="v">Hotel Mercure Paris Saint／H4 Wyndham Paris Pleyel／voco Paris Porte de Clichy by IHG 或同級 4★</div></div>
+          <div><div class="k">Stay</div><div class="v hotels"><a href="https://all.accor.com/hotel/A780/index.en.shtml" target="_blank" rel="noopener">Mercure Paris Saint-Ouen</a><span class="sep">／</span><a href="https://www.google.com/maps/search/?api=1&query=H4+Hotel+Wyndham+Paris+Pleyel+Resort" target="_blank" rel="noopener">H4 Wyndham Paris Pleyel</a><span class="sep">／</span><a href="https://www.ihg.com/voco/hotels/gb/en/clichy/parpc/hoteldetail" target="_blank" rel="noopener">voco Paris Porte de Clichy by IHG</a><span class="sep">或同級 4★</span></div></div>
         </div>
         <div class="tip warn"><b>注意</b>：4/13 是星期二，羅浮宮官方每週二休館。請向旅行社確認實際入館日。</div>
         <div class="tip">退稅：單店單日消費滿 €100 即可辦理，老佛爺百貨內有退稅櫃檯，記得帶護照。退稅單在戴高樂機場 PABLO 機器掃描後才算完成。</div>
