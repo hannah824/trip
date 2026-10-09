@@ -50,16 +50,14 @@
     position:relative;
     color:#fff;
     background:
-      radial-gradient(ellipse at 20% 0%, rgba(180,144,61,.22), transparent 55%),
-      linear-gradient(160deg,var(--delft-deep) 0%,var(--delft) 60%,#24507f 100%);
+      linear-gradient(180deg, rgba(15,39,66,.55) 0%, rgba(15,39,66,.72) 55%, rgba(15,39,66,.92) 100%),
+      url(img/hero.jpg) center 40%/cover no-repeat;
     overflow:hidden;
     padding:72px 0 64px;
   }
   header.hero::before{
     content:"";position:absolute;inset:0;
-    background:
-      radial-gradient(circle at 50% 50%, rgba(255,255,255,.05) 0 1px, transparent 1.5px) 0 0/28px 28px,
-      radial-gradient(circle at 50% 50%, rgba(230,214,174,.07) 0 1px, transparent 1.5px) 14px 14px/28px 28px;
+    background:radial-gradient(ellipse at 50% 100%, rgba(15,39,66,.35), transparent 60%);
     pointer-events:none;
   }
   header.hero::after{
@@ -75,7 +73,7 @@
   .eyebrow::before{content:"";width:40px;height:1px;background:var(--gold-soft);flex:none}
   .eyebrow::after{content:"❧";color:var(--gold-soft);font-size:16px;letter-spacing:0}
   @media (max-width:720px){.eyebrow{font-size:12px;letter-spacing:.2em}.eyebrow::before{width:24px}}
-  .hero h1{font-size:clamp(34px,6vw,64px);font-weight:900;letter-spacing:.04em;text-shadow:0 2px 0 rgba(0,0,0,.15)}
+  .hero h1{font-size:clamp(34px,6vw,64px);font-weight:900;letter-spacing:.04em;text-shadow:0 2px 12px rgba(0,0,0,.45)}
   .hero h1 small{display:block;font-size:.42em;font-weight:500;letter-spacing:.2em;color:var(--gold-soft);margin-top:8px}
   .hero-meta{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:28px;font-size:15px;color:rgba(255,255,255,.9)}
   .hero-meta b{color:var(--gold-soft);font-weight:500;margin-right:6px;font-family:"Cormorant Garamond",serif;letter-spacing:.15em;font-size:13px}
@@ -91,9 +89,8 @@
   .flag.fr i{background:linear-gradient(90deg,#0055a4 0 33%,#fff 33% 66%,#ef4135 66%)}
   .highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:38px}
   .hl{
-    background:rgba(255,255,255,.06);border:1px solid rgba(230,214,174,.35);border-radius:6px;padding:16px 18px;position:relative;
+    background:rgba(15,39,66,.45);border:1px solid rgba(230,214,174,.35);border-radius:6px;padding:16px 18px;position:relative;backdrop-filter:blur(6px);
   }
-  @media (prefers-reduced-motion:no-preference){.hl{animation:rise .8s ease both}.hl:nth-child(2){animation-delay:.12s}.hl:nth-child(3){animation-delay:.24s}}
   .hl .k{font-size:12px;letter-spacing:.25em;color:var(--gold-soft);font-family:"Cormorant Garamond",serif;text-transform:uppercase}
   .hl .v{font-family:"Noto Serif TC",serif;font-size:19px;font-weight:700;margin-top:4px}
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
@@ -192,6 +189,8 @@
   .day .side .wd{font-size:13px;opacity:.8}
   .day .side .country{margin-top:auto;font-size:12px;letter-spacing:.15em;opacity:.8;padding-top:14px}
   .day .body{padding:24px 26px 22px}
+  .day .photo{margin:-24px -26px 18px;height:210px;background-size:cover;background-position:center;position:relative}
+  .day .photo::after{content:attr(data-cap);position:absolute;left:0;right:0;bottom:0;padding:28px 18px 10px;color:#fff;font-size:13px;letter-spacing:.08em;background:linear-gradient(180deg,transparent,rgba(15,39,66,.75))}
   .day h3{font-size:22px;font-weight:700;margin-bottom:6px}
   .day .route{font-size:14px;color:var(--ink-soft);margin-bottom:14px}
   .day .route b{color:var(--gold);font-weight:500}
@@ -241,7 +240,9 @@
   @media (max-width:720px){
     .day{grid-template-columns:1fr}
     .day .side{flex-direction:row;align-items:center;gap:14px;padding:16px 18px}
+    .day .body{padding:16px 18px 18px}
     .day .side .n{font-size:34px}
+    .day .photo{margin:-16px -18px 16px;height:170px}
     .day .side .country{margin-top:0;margin-left:auto;padding-top:0}
     .meta{grid-template-columns:1fr}
     .pack{columns:1}
@@ -254,7 +255,6 @@
   }
   @media print{
     nav.toc{display:none}
-    .hl{animation:none;opacity:1}
     body{background:#fff}
     .day,.card,table{box-shadow:none;break-inside:avoid}
     header.hero{padding:36px 0}
@@ -452,6 +452,7 @@
     <article class="day nl">
       <div class="side"><div><div class="d">Day</div><div class="n">02</div></div><div><div class="date">4 月 7 日</div><div class="wd">星期三</div></div><div class="country">NETHERLANDS</div></div>
       <div class="body">
+        <div class="photo" style="background-image:url(img/volendam.jpg)" data-cap="沃倫丹 Volendam · 北海漁村"></div>
         <h3>桑斯安斯風車村・沃倫丹・阿姆斯特丹</h3>
         <p class="route">阿姆斯特丹 <b>→</b> 桑斯安斯 Zaanse Schans <b>→</b> 沃倫丹 Volendam <b>→</b> 阿姆斯特丹市區＋運河遊船</p>
         <div class="spots">
@@ -473,6 +474,7 @@
     <article class="day nl">
       <div class="side"><div><div class="d">Day</div><div class="n">03</div></div><div><div class="date">4 月 8 日</div><div class="wd">星期四</div></div><div class="country">NETHERLANDS</div></div>
       <div class="body">
+        <div class="photo" style="background-image:url(img/giethoorn.jpg)" data-cap="羊角村 Giethoorn · 水上童話小鎮"></div>
         <h3>羊角村水上童話小鎮・烏特勒支</h3>
         <p class="route">阿姆斯特丹 <b>→</b> 羊角村 Giethoorn <b>→</b> 烏特勒支 Utrecht <b>→</b> 阿姆斯特丹</p>
         <div class="spots">
@@ -492,6 +494,7 @@
     <article class="day nl">
       <div class="side"><div><div class="d">Day</div><div class="n">04</div></div><div><div class="date">4 月 9 日</div><div class="wd">星期五</div></div><div class="country">NETHERLANDS</div></div>
       <div class="body">
+        <div class="photo" style="background-image:url(img/rotterdam.jpg)" data-cap="鹿特丹 Rotterdam · 伊拉斯謨橋"></div>
         <h3>庫肯霍夫花園・鹿特丹</h3>
         <p class="route">阿姆斯特丹 <b>→</b> 庫肯霍夫花園 Keukenhof <b>→</b> 鹿特丹 Rotterdam（方塊屋＋市集廣場）</p>
         <div class="spots">
@@ -529,6 +532,7 @@
     <article class="day fr">
       <div class="side"><div><div class="d">Day</div><div class="n">06</div></div><div><div class="date">4 月 11 日</div><div class="wd">星期日</div></div><div class="country">FRANCE</div></div>
       <div class="body">
+        <div class="photo" style="background-image:url(img/eiffel.jpg)" data-cap="巴黎 Paris · 塞納河與艾菲爾鐵塔"></div>
         <h3>巴黎：蒙馬特・塞納河午宴・艾菲爾鐵塔・香榭麗舍</h3>
         <p class="route">布魯塞爾 <b>→</b> 巴黎（聖心堂＋畫家村＋塞納河遊船＋艾菲爾鐵塔＋香榭麗舍大道）</p>
         <div class="spots">
@@ -550,6 +554,7 @@
     <article class="day fr">
       <div class="side"><div><div class="d">Day</div><div class="n">07</div></div><div><div class="date">4 月 12 日</div><div class="wd">星期一</div></div><div class="country">FRANCE</div></div>
       <div class="body">
+        <div class="photo" style="background-image:url(img/versailles.jpg)" data-cap="凡爾賽宮 Château de Versailles · 金色大門"></div>
         <h3>凡爾賽宮・聖母院・左岸・莎士比亞書局</h3>
         <p class="route">巴黎 <b>→</b> 凡爾賽宮 Château de Versailles <b>→</b> 聖母院 <b>→</b> 左岸 <b>→</b> 莎士比亞書局</p>
         <div class="spots">
@@ -570,6 +575,7 @@
     <article class="day fr">
       <div class="side"><div><div class="d">Day</div><div class="n">08</div></div><div><div class="date">4 月 13 日</div><div class="wd">星期二</div></div><div class="country">FRANCE</div></div>
       <div class="body">
+        <div class="photo" style="background-image:url(img/louvre.jpg)" data-cap="羅浮宮 Musée du Louvre · 玻璃金字塔"></div>
         <h3>羅浮宮・老佛爺百貨・方正藥妝</h3>
         <p class="route">羅浮宮 Musée du Louvre <b>→</b> 拉法葉（老佛爺）百貨 <b>→</b> 方正藥妝 Corre Opéra</p>
         <div class="spots">
